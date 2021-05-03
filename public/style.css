@@ -1,0 +1,633 @@
+html {
+  height: 100%;
+  padding: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
+    background-color: #ffe9d6;
+}
+
+p {
+  font-size: 15px;
+}
+h4 {
+  font-size: 17px;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 22%;
+  margin: 10px;
+  text-decoration: none;
+  border: #3f3697;
+  border-style: solid;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.details {
+  padding: 2px 16px;
+  color: #7b6079;
+  background-color: white;
+}
+
+.App-header {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #282c34;
+}
+
+.editable {
+  color: #000000;
+  border: 1px solid #eeeeee;
+  box-shadow: 1px 1px 0 #dddddd;
+  display: inline-block;
+  vertical-align: top;
+  /*font-family: 'Marck Script', cursive;*/
+  font-family: "Reenie Beanie", cursive;
+  font-size: 24px;
+  line-height: 20px;
+  margin: 2% 5%;
+  padding: 22px 20px 3px 40px;
+  resize: none;
+  min-height: 230px;
+  width: 340px;
+  background-color: #ffffff;
+  background-image: -moz-linear-gradient(
+      top,
+      transparent,
+      transparent 19px,
+      #e7eff8 0px
+    ),
+    -moz-radial-gradient(4% 50%, circle closest-corner, #f5f5f5, #f5f5f5 39%, transparent
+          0%),
+    -moz-radial-gradient(3.9% 46%, circle closest-corner, #cccccc, #cccccc 43.5%, transparent
+          0%);
+  background-image: -webkit-linear-gradient(
+      top,
+      transparent,
+      transparent 19px,
+      #e7eff8 0
+    ),
+    -webkit-radial-gradient(4% 50%, circle closest-corner, #f5f5f5, #f5f5f5 39%, transparent
+          0%),
+    -webkit-radial-gradient(3.9% 46%, circle closest-corner, #cccccc, #cccccc
+          43.5%, transparent 0%);
+  -webkit-background-size: 100% 20px;
+  background-size: 100% 20px;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -280px;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.read {
+  margin: 5px;
+  margin-left: 43%;
+  padding: 5px;
+  cursor: pointer;
+  color:#7b6079;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/**
+Default
+**/
+.react-pagination-js-default ul{
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  list-style: none;
+  font-size: .875em;
+  font-family: inherit;
+}
+
+li.page.disabled {
+  cursor: default;
+  pointer-events: none;
+  color: #999999;
+}
+
+.react-pagination-js-default .page {
+  display: inline-block;
+  padding: 0px 9px;
+  margin-right: 4px;
+  border-radius: 3px;
+  border: solid 1px #c0c0c0;
+  background: #e9e9e9;
+  box-shadow: inset 0px 1px 0px rgba(255,255,255, .8), 0px 1px 3px rgba(0,0,0, .1);
+
+  font-weight: bold;
+  text-decoration: none;
+  color: #717171;
+  text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+  cursor: pointer;
+}
+.react-pagination-js-default .is-active {
+  display: inline-block;
+  padding: 0px 9px;
+  margin-right: 4px;
+  border-radius: 3px;
+  border: solid 1px #c0c0c0;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+
+  font-weight: bold;
+  text-decoration: none;
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+  cursor: pointer;
+}
+.react-pagination-js-default .pageElli {
+  display: inline-block;
+  padding: 0px 9px;
+  margin-right: 4px;
+
+  font-weight: bold;
+  text-decoration: none;
+  color: #717171;
+}
+
+
+.react-pagination-js-default .page:hover, .page.gradient:hover {
+  background: #fefefe;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#f0f0f0));
+  background: -moz-linear-gradient(0% 0% 270deg,#FEFEFE, #f0f0f0);
+}
+
+.react-pagination-js-default .page.active {
+  border: none;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+}
+
+/**
+Dark
+**/
+.react-pagination-js-dark ul{
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  list-style: none;
+  font-size: .875em;
+  font-family: inherit;
+}
+.react-pagination-js-dark .page {
+  display: inline-block;
+  padding: 0px 9px;
+  margin-right: 4px;
+  border-radius: 3px;
+
+  border: solid 1px #c0c0c0;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+  color: #f0f0f0;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+.react-pagination-js-dark .is-active {
+  display: inline-block;
+  padding: 0px 9px;
+  margin-right: 4px;
+  border-radius: 3px;
+
+  border: solid 1px #c0c0c0;
+  background: #332e2e;
+  text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+  color: #717171;
+
+
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+  cursor: pointer;
+}
+.react-pagination-js-dark .pageElli {
+  display: inline-block;
+  padding: 0px 9px;
+  margin-right: 4px;
+
+  font-weight: bold;
+  text-decoration: none;
+  color: #717171;
+}
+
+
+.react-pagination-js-dark .page:hover, .page.gradient:hover {
+  background: #fefefe;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0, .5)), to(rgba(0,0,0, .5)));
+  background: -moz-linear-gradient(0% 0% 270deg,rgba(0,0,0, .5), rgba(0,0,0, .5));
+}
+
+.react-pagination-js-dark .page.active {
+  border: none;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+}
+
+
+/**
+Bootstrap css
+**/
+.react-pagination-js-bootstrap ul{
+
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  list-style: none;
+  display: inline-block;
+  *display: inline;
+  font-size: .875em;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  margin-left: 0;
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-family: inherit;
+}
+.react-pagination-js-bootstrap .page {
+  float: left;
+  padding: 0 14px;
+  line-height: 34px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-left-width: 0;
+  cursor: pointer;
+  color: #0088cc;
+}
+.react-pagination-js-bootstrap .is-active {
+  float: left;
+  padding: 0 14px;
+  line-height: 34px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-left-width: 0;
+  color: #999999;
+  background-color: #f5f5f5;
+  cursor: default;
+}
+.react-pagination-js-bootstrap .pageElli {
+  float: left;
+  padding: 0 14px;
+  line-height: 34px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-left-width: 0;
+  color: #999999;
+  cursor: default;
+
+}
+
+
+.react-pagination-js-bootstrap .page:hover {
+  background-color: #f5f5f5;
+}
+
+.react-pagination-js-bootstrap .page.active {
+  color: #999999;
+  cursor: default;
+}
+
+
+.react-pagination-js-bootstrap .page:first-child  {
+  border-left-width: 1px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+
+}
+.react-pagination-js-bootstrap  .page:last-child  {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+
+/**
+Border Bottom
+*/
+.react-pagination-js-border-bottom ul{
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  list-style: none;
+  font-size: .875em;
+  font-family: inherit;
+  line-height: 2em;
+}
+.react-pagination-js-border-bottom .page {
+  display: inline-block;
+  padding: 0px 1px;
+    margin: 0px 9px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.react-pagination-js-border-bottom .is-active {
+  display: inline-block;
+  padding: 0px 1px;
+  margin: 0px 9px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-bottom: 1px solid #0088cc;
+  color: #0088cc
+}
+.react-pagination-js-border-bottom .pageElli {
+  display: inline-block;
+  padding: 0px 9px;
+  margin-right: 4px;
+
+  font-weight: bold;
+  text-decoration: none;
+  color: #717171;
+
+}
+
+
+.react-pagination-js-border-bottom .page:hover{
+  font-weight: bold;
+  border-bottom: 1px solid #0088cc;
+}
+/**
+Circle
+**/
+
+.react-pagination-js-circle ul{
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  list-style: none;
+  font-size: .875em;
+  font-family: inherit;
+  line-height: 2em;
+}
+.react-pagination-js-circle .page {
+  display: inline-block;
+  padding: 0px 1px;
+    margin: 0px 9px;
+  text-decoration: none;
+  cursor: pointer;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  padding: 0;
+  margin: auto 5px;
+  text-align: center;
+  position: relative;
+}
+.react-pagination-js-circle .is-active {
+  display: inline-block;
+  padding: 0px 1px;
+  margin: 0px 9px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+
+  color: #0088cc;
+  border: 3px solid #0088cc;
+  border-radius: 100%;
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+  padding: 0;
+  margin: auto 5px;
+  text-align: center;
+  position: relative;
+}
+.react-pagination-js-circle .pageElli {
+  display: inline-block;
+  padding: 0px 9px;
+  margin-right: 4px;
+
+  font-weight: bold;
+  text-decoration: none;
+  color: #717171;
+
+}
+
+
+.react-pagination-js-circle .page:hover{
+  font-weight: bold;
+  color: #0088cc;
+  border: 3px solid #0088cc;
+}
+.circle a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+  text-align: center;
+  margin: auto 5px;
+}
+
+.circle a.is-active {
+  border: 3px solid #2ecc71;
+  border-radius: 100%;
+
+}
+
+.main {
+  background-color: white;
+  margin: 6rem auto;
+  border-radius: 10px;
+  padding-top: 40px;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.auth {
+  height: 300px;
+  width: 400px;
+}
+
+form.form {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.form-title {
+  color: purple;
+  font-weight: bold;
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.form input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="date"],
+select,
+textarea {
+  width: 60%;
+  color: black;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  margin-left: 46px;
+  text-align: left;
+  margin-bottom: 27px;
+}
+
+.input-text:focus {
+  border: 1px solid var(purple) !important;
+}
+
+.forgot :hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.form a {
+  color: purple;
+}
+
+.form a :hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 30px;
+  z-index: 1;
+  border-bottom: solid 1px white;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: white;
+  margin-right: 50px;
+  font-family: 'Roboto', monospace;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+.bg-navbar {
+  background: linear-gradient(
+    to right,
+    purple,
+    rgb(154, 32, 109)
+  );
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  font-size: 18px;
+  border: 0;
+  border-radius: 5px;
+  background-color: purple;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
